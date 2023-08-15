@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nivelin - Matematicas - Sumas</title>
+    <link rel="stylesheet" type="text/css" href="../../../styles/MatematicasStyle.css">
+    <script>
+        window.addEventListener('load', function() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    </script>
+</head>
+<body class="container">
+    <header>
+        <nav>
+            <h1 class="logo">Nivelin</h1>
+            <a href="../../../index.html"><p class="inicio">Cerrar Sesion</p></a>
+        </nav>
+    </header>
+    <div class="elemento">SUMA</div><br>
+    <div class="pregunta">
+        <br><p id="pregunta1"></p>
+        <input type="text" id="respuesta1" class="campo-texto">
+        <button onclick="verificarRespuesta(1)" class="boton-ancho">Verificar</button>
+        <br><span id="resultado1"></span>
+    </div>
+    <div class="pregunta">
+        <p id="pregunta2"></p>
+        <input type="text" id="respuesta2" class="campo-texto">
+        <button onclick="verificarRespuesta(2)" class="boton-ancho">Verificar</button>
+        <br><span id="resultado2"></span>
+    </div>
+    <div class="pregunta">
+        <p id="pregunta3"></p>
+        <input type="text" id="respuesta3" class="campo-texto">
+        <button onclick="verificarRespuesta(3)" class="boton-ancho">Verificar</button>
+        <br><span id="resultado3"></span>
+    </div>
+    <div class="pregunta">
+        <p id="pregunta4"></p>
+        <input type="text" id="respuesta4" class="campo-texto">
+        <button onclick="verificarRespuesta(4)" class="boton-ancho">Verificar</button>
+        <br><span id="resultado4"></span>
+    </div>
+
+    <script>
+        var val1, val2, val3, val4, val5, val6, val7, val8;
+        val1 = Math.floor(Math.random() * 10) + 1;
+        val2 = Math.floor(Math.random() * 10) + 1;
+        val3 = Math.floor(Math.random() * 10) + 1;
+        val4 = Math.floor(Math.random() * 10) + 1;
+        val5 = Math.floor(Math.random() * 10) + 1;
+        val6 = Math.floor(Math.random() * 10) + 1;
+        val7 = Math.floor(Math.random() * 10) + 1;
+        val8 = Math.floor(Math.random() * 10) + 1;
+            
+        function generarPregunta(num_pregunta) {
+            switch (num_pregunta){
+                case 1:
+                    document.getElementById("pregunta1").textContent = "1) ¿Cuánto es " + val1 + " + " + val2 + "?";
+                    document.getElementById("resultado1").textContent = "";
+                    break;
+                case 2:
+                    document.getElementById("pregunta2").textContent = "2) ¿Cuánto es " + val3 + " + " + val4 + "?";
+                    document.getElementById("resultado2").textContent = "";
+                    break;
+                case 3:
+                    document.getElementById("pregunta3").textContent = "3) ¿Cuánto es " + val5 + " + " + val6 + "?";
+                    document.getElementById("resultado3").textContent = "";
+                    break;
+                case 4:
+                    document.getElementById("pregunta4").textContent = "4) ¿Cuánto es " + val7 + " + " + val8 + "?";
+                    document.getElementById("resultado4").textContent = "";
+                    break;
+            }
+        }
+        
+        function verificarRespuesta(pregunta) {
+            var respuesta;
+            var resultadoId;
+            switch (pregunta) {
+                case 1:
+                    respuesta = document.getElementById('respuesta1').value;
+                    resultadoId = 'resultado1';
+                    break;
+                case 2:
+                    respuesta = document.getElementById('respuesta2').value;
+                    resultadoId = 'resultado2';
+                    break;
+                case 3:
+                    respuesta = document.getElementById('respuesta3').value;
+                    resultadoId = 'resultado3';
+                    break;
+                case 4:
+                    respuesta = document.getElementById('respuesta4').value;
+                    resultadoId = 'resultado4';
+                    break;
+            }
+            var resultado = parseInt(respuesta, 10);
+            var esCorrecto = false;
+            switch (pregunta) {
+                case 1:
+                    esCorrecto = resultado === (val1 + val2);
+                    break;
+                case 2:
+                    esCorrecto = resultado === (val3 + val4);
+                    break;
+                case 3:
+                    esCorrecto = resultado === (val5 + val6);
+                    break;
+                case 4:
+                    esCorrecto = resultado === (val7 + val8);
+                    break;
+            }
+            var resultadoSpan = document.getElementById(resultadoId);
+            resultadoSpan.innerHTML = esCorrecto ? '<span class="correcto">¡Correcto!</span>' : '<span class="incorrecto">Incorrecto</span>';
+        }
+   
+        generarPregunta(1);
+        generarPregunta(2);
+        generarPregunta(3);
+        generarPregunta(4);
+    </script>
+    <a href="cursoMatematica.html" class="regresar"><h2>Regresar</h2></a>
+</body>
+</html>

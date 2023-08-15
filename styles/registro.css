@@ -1,0 +1,71 @@
+body {
+    background: rgb(155, 151, 224);
+    background: linear-gradient(90deg, rgb(145, 141, 216) 0%, rgb(167, 140, 212) 23%, rgb(172, 125, 179) 100%);
+    background-repeat: no-repeat;
+    background-size: 100% 70px;
+    background-position: top center, bottom center;
+  }
+  
+  .imgLog{
+    width: 150px; /* Ancho de la imagen */
+    height: 100px; /* Alto de la imagen */
+}
+.botonesC {
+    width: 100px;
+    background: rgb(155, 151, 224);
+    background: linear-gradient(90deg, rgb(145, 141, 216) 0%, rgb(167, 140, 212) 23%, rgb(172, 125, 179) 100%);
+    color: black;
+    border: none;
+    font-size: 12px;
+    border-radius: 4px;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+    .crea{
+    text-align: center;
+    display: block;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #FFFFFF;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    width: 300px;
+}
+ .botones{
+    text-align: center;
+ }
+ 
+.boton {
+    width: 100px;
+    background-color: #ff2b2b;
+    color: white;
+    border: none;
+    font-size: 12px;
+    border-radius: 4px;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.boton:hover {
+    background-color: #45a049;
+}
+
+.boton:active {
+    background-color: #3e8e41;
+}
+ .texto-f{
+    text-align: center;
+    font-size: 10px;
+}
+ .pie {
+    background: rgb(155, 151, 224);
+    background: linear-gradient(90deg, rgb(145, 141, 216) 0%, rgb(167, 140, 212) 23%, rgb(172, 125, 179) 100%);
+    background-repeat: no-repeat;
+    background-size: 100% 70px;
+    background-position: top center, bottom center;
+  }

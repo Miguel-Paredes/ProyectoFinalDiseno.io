@@ -1,0 +1,44 @@
+body {
+    background: rgb(155, 151, 224);
+    background: linear-gradient(90deg, rgb(145, 141, 216) 0%, rgb(167, 140, 212) 23%, rgb(172, 125, 179) 100%);
+}
+*{
+    padding: 0.5%;
+    margin: 0.5%;
+    height: auto;
+    font-family:'Arial Narrow Bold', sans-serif;
+}
+
+.NombreE{
+    text-align: center;
+}
+
+.present{
+    text-align: center;
+}
+  
+
+.text{
+    text-align: center;
+}
+
+.LR{
+    width: 100px;
+    background-color: white;
+    color: rgb(0, 0, 0);
+    border: none;
+    font-size: 12px;
+    border-radius: 4px;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.LR:hover {
+    background: rgb(255, 255, 255);
+}
+
+.LR:active {
+    background: rgb(255, 255, 255);
+}

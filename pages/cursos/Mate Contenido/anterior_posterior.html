@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nivelin - Matematicas - Numeros anterior y posterior</title>
+    <link rel="stylesheet" type="text/css" href="../../../styles/MatematicasStyle.css">
+    <script>
+        window.addEventListener('load', function() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    </script>
+</head>
+<body class="container">
+    <header>
+        <nav>
+            <h1 class="logo">Nivelin</h1>
+            <a href="../../../index.html"><p class="inicio">Cerrar Sesion</p></a>
+        </nav>
+    </header>
+    <div class="elemento">NUMEROS ANTERIOR Y POSTERIOR</div><br>
+    <div class="pregunta">
+        <br><p id="pregunta1"></p>
+        <table>
+            <tr>
+                <td>anterior</td>
+                <td>posterior</td>
+            </tr>
+            <tr>
+                <th><input type="text" id="respuesta1" class="campo-texto"></th>
+                <th><input type="text" id="respuesta2" class="campo-texto"></th>
+            </tr>
+        </table>
+        <button onclick="verificarRespuesta(1)" class="boton-ancho">Verificar</button>
+        <br><span id="resultado1"></span>
+    </div>
+    <div class="pregunta">
+        <p id="pregunta2"></p>
+        <table>
+            <tr>
+                <td>anterior</td>
+                <td>posterior</td>
+            </tr>
+            <tr>
+                <th><input type="text" id="respuesta3" class="campo-texto"></th>
+                <th><input type="text" id="respuesta4" class="campo-texto"></th>
+            </tr>
+        </table>
+        <button onclick="verificarRespuesta(2)" class="boton-ancho">Verificar</button>
+        <br><span id="resultado2"></span>
+    </div>
+    <div class="pregunta">
+        <p id="pregunta3"></p>
+        <table>
+            <tr>
+                <td>anterior</td>
+                <td>posterior</td>
+            </tr>
+            <tr>
+                <th><input type="text" id="respuesta5" class="campo-texto"></th>
+                <th><input type="text" id="respuesta6" class="campo-texto"></th>
+            </tr>
+        </table>
+        <button onclick="verificarRespuesta(3)" class="boton-ancho">Verificar</button>
+        <br><span id="resultado3"></span>
+    </div>
+    <div class="pregunta">
+        <p id="pregunta4"></p>
+        <table>
+            <tr>
+                <td>anterior</td>
+                <td>posterior</td>
+            </tr>
+            <tr>
+                <th><input type="text" id="respuesta7" class="campo-texto"></th>
+                <th><input type="text" id="respuesta8" class="campo-texto"></th>
+            </tr>
+        </table>
+        <button onclick="verificarRespuesta(4)" class="boton-ancho">Verificar</button>
+        <br><span id="resultado4"></span>
+    </div>
+    <script>
+        var val1, val2, val3, val4;
+        do {
+            val1 = Math.floor(Math.random() * 10) + 1;
+            val2 = Math.floor(Math.random() * 10) + 1;
+            val3 = Math.floor(Math.random() * 10) + 1;
+            val4 = Math.floor(Math.random() * 10) + 1;} 
+        while (val1 === val2 || val1 === val3 || val1 === val4 || val2 === val3 || val2 === val4 || val3 === val4);
+            
+        function generarPregunta(num_pregunta) {
+            switch (num_pregunta){
+                case 1:
+                    document.getElementById("pregunta1").textContent = "1) ¿Cuál es el número anterior y posterior de " + val1 + "?";
+                    document.getElementById("resultado1").textContent = "";
+                    break;
+                case 2:
+                    document.getElementById("pregunta2").textContent = "2) ¿Cuál es el número anterior y posterior de " + val2 + "?";
+                    document.getElementById("resultado2").textContent = "";
+                    break;
+                case 3:
+                    document.getElementById("pregunta3").textContent = "3) ¿Cuál es el número anterior y posterior de " + val3 + "?";
+                    document.getElementById("resultado3").textContent = "";
+                    break;
+                case 4:
+                    document.getElementById("pregunta4").textContent = "4) ¿Cuál es el número anterior y posterior de " + val4 + "?";
+                    document.getElementById("resultado4").textContent = "";
+                    break;
+            }
+        }
+        
+        function verificarRespuesta(pregunta) {
+            var respuesta1, respuesta2;
+            var resultadoId;
+            switch (pregunta) {
+                case 1:
+                    respuesta1 = document.getElementById('respuesta1').value;
+                    respuesta2 = document.getElementById('respuesta2').value;
+                    resultadoId = 'resultado1';
+                    break;
+                case 2:
+                    respuesta1 = document.getElementById('respuesta3').value;
+                    respuesta2 = document.getElementById('respuesta4').value;
+                    resultadoId = 'resultado2';
+                    break;
+                case 3:
+                    respuesta1 = document.getElementById('respuesta5').value;
+                    respuesta2 = document.getElementById('respuesta6').value;
+                    resultadoId = 'resultado3';
+                    break;
+                case 4:
+                    respuesta1 = document.getElementById('respuesta7').value;
+                    respuesta2 = document.getElementById('respuesta8').value;
+                    resultadoId = 'resultado4';
+                    break;
+            }
+            var resultado1 = parseInt(respuesta1, 10);
+            var resultado2 = parseInt(respuesta2, 10);
+            var esCorrecto = false;
+            switch (pregunta) {
+                case 1:
+                    esCorrecto = resultado1 === (val1 - 1) && resultado2 === (val1 + 1);
+                    break;
+                case 2:
+                    esCorrecto = resultado1 === (val2 - 1) && resultado2 === (val2 + 1);
+                    break;
+                case 3:
+                    esCorrecto = resultado1 === (val3 - 1) && resultado2 === (val3 + 1);
+                    break;
+                case 4:
+                    esCorrecto = resultado1 === (val4 - 1) && resultado2 === (val4 + 1);
+                    break;
+            }
+            var resultadoSpan = document.getElementById(resultadoId);
+            resultadoSpan.innerHTML = esCorrecto ? '<span class="correcto">¡Correcto!</span>' : '<span class="incorrecto">Incorrecto</span>';
+        }
+   
+        generarPregunta(1);
+        generarPregunta(2);
+        generarPregunta(3);
+        generarPregunta(4);
+    </script>
+    <a href="cursoMatematica.html" class="regresar"><h2>Regresar</h2></a>
+</body>
+</html>

@@ -1,0 +1,50 @@
+body{
+    font-family: Arial, sans-serif;
+    background-color: #f1f1f1;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    color: #000000;
+}
+
+.pregunta {
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 12px;
+    color: #000000;
+}
+
+input[type="radio"] {
+    margin-right: 10px;
+}
+
+.botonT {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    font-size: 12px;
+    cursor: pointer;
+}
+.botonR {
+    background-color: #ff2b2b;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.boton:hover {
+    background-color: #45a049;
+}
+
+.boton:active {
+    background-color: #3e8e41;
+}

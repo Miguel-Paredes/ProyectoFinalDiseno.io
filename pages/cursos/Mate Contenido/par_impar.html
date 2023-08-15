@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nivelin - Matematicas - Numeros pares e impares</title>
+    <link rel="stylesheet" type="text/css" href="../../../styles/MatematicasStyle.css">
+    <script>
+        window.addEventListener('load', function() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    </script>
+</head>
+<body class="container">
+    <header>
+        <nav>
+            <h1 class="logo">Nivelin</h1>
+            <a href="../../../index.html"><p class="inicio">Cerrar Sesion</p></a>
+        </nav>
+    </header>
+    <div class="elemento">NÚMEROS PARES E IMPARES</div><br>
+    <div class="pregunta">
+        <br><p id="pregunta1"></p>
+        <button onclick="verificarRespuesta(1, true)" class="boton-ancho">Par</button>
+        <button onclick="verificarRespuesta(1, false)" class="boton-ancho">Impar</button>
+        <br><span id="resultado1"></span>
+    </div>
+    <div class="pregunta">
+        <p id="pregunta2"></p>
+        <button onclick="verificarRespuesta(2, true)" class="boton-ancho">Par</button>
+        <button onclick="verificarRespuesta(2, false)" class="boton-ancho">Impar</button>
+        <br><span id="resultado2"></span>
+    </div>
+    <div class="pregunta">
+        <p id="pregunta3"></p>
+        <button onclick="verificarRespuesta(3, true)" class="boton-ancho">Par</button>
+        <button onclick="verificarRespuesta(3, false)" class="boton-ancho">Impar</button>
+        <br><span id="resultado3"></span>
+    </div>
+    <div class="pregunta">
+        <p id="pregunta4"></p>
+        <button onclick="verificarRespuesta(4, true)" class="boton-ancho">Par</button>
+        <button onclick="verificarRespuesta(4, false)" class="boton-ancho">Impar</button>
+        <br><span id="resultado4"></span>
+    </div>
+
+    <script>
+        var val1, val2, val3, val4;
+        do {
+            val1 = Math.floor(Math.random() * 10) + 1;
+            val2 = Math.floor(Math.random() * 10) + 1;
+            val3 = Math.floor(Math.random() * 10) + 1;
+            val4 = Math.floor(Math.random() * 10) + 1;} 
+        while (val1 === val2 || val1 === val3 || val1 === val4 || val2 === val3 || val2 === val4 || val3 === val4);
+
+            
+        function generarPregunta(num_pregunta) {
+            switch (num_pregunta){
+                case 1:
+                    document.getElementById("pregunta1").textContent = "1) ¿Es par o impar el siguiente numero " + val1 + "?";
+                    document.getElementById("resultado1").textContent = "";
+                    break;
+                case 2:
+                    document.getElementById("pregunta2").textContent = "2) ¿Es par o impar el siguiente numero " + val2 + "?";
+                    document.getElementById("resultado2").textContent = "";
+                    break;
+                case 3:
+                    document.getElementById("pregunta3").textContent = "3) ¿Es par o impar el siguiente numero " + val3 + "?";
+                    document.getElementById("resultado3").textContent = "";
+                    break;
+                case 4:
+                    document.getElementById("pregunta4").textContent = "4) ¿Es par o impar el siguiente numero " + val4 + "?";
+                    document.getElementById("resultado4").textContent = "";
+                    break;
+            }
+        }
+        
+        function verificarRespuesta(pregunta, esPar) {
+            var esCorrecto = false;
+            switch (pregunta) {
+                case 1:
+                    esCorrecto = (val1 % 2 === 0 && esPar) || (val1 % 2 === 1 && !esPar);
+                    break;
+                case 2:
+                    esCorrecto = (val2 % 2 === 0 && esPar) || (val2 % 2 === 1 && !esPar);
+                    break;
+                case 3:
+                    esCorrecto = (val3 % 2 === 0 && esPar) || (val3 % 2 === 1 && !esPar);
+                    break;
+                case 4:
+                    esCorrecto = (val4 % 2 === 0 && esPar) || (val4 % 2 === 1 && !esPar);
+                    break;
+            }
+            var resultadoSpan = document.getElementById('resultado' + pregunta);
+            resultadoSpan.innerHTML = esCorrecto ? '<span class="correcto">¡Correcto!</span>' : '<span class="incorrecto">Incorrecto</span>';
+        }
+   
+        generarPregunta(1);
+        generarPregunta(2);
+        generarPregunta(3);
+        generarPregunta(4);
+    </script>
+    <a href="cursoMatematica.html" class="regresar"><h2>Regresar</h2></a>
+</body>
+</html>
