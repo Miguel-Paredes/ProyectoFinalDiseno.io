@@ -11,7 +11,6 @@
    <br><br><br>
 </header>
 
-
 <section>
     <header class="sesion">
         <img class="imgLog" src="../assets/2.png" alt="XD">
@@ -22,13 +21,13 @@
     </header>
     <nav class="accion">
         <br>
-        <a href="menuPrincipal.html"><button class="botonesC"><b>Iniciar sesion</b></button></a>
+        <button class="botonesC" onclick="verificarCredenciales()"><b>Iniciar sesión</b></button>
         <br><br>
         <p style="color: rgb(137, 137, 218);">Si no tiene una cuenta creada, regístrese a continuación</p>
         <a href="registro.html"><button class="botonesC"><b>Registrarse</b></button></a>
         <br><br>
         <a href="../index.html"><button class="boton"><b>Salir</b></button></a><br>
-        </nav>
+    </nav>
 </section>
 <footer>
     <h3 class="texto-f">Derechos reservados Nivelin</h3>
@@ -38,6 +37,16 @@
 <br><br><br>
 </footer>
 
+<script>
+    function verificarCredenciales() {
+        var usuario = document.querySelector('input[type="text"]').value;
+        var contraseña = document.querySelector('input[type="password"]').value;
 
+        if (usuario === "nivelin@gmail.com" && contraseña === "nivelin") {
+            window.location.href = "menuPrincipal.html";}
+        else {
+            alert("Credenciales incorrectas. Por favor, inténtelo nuevamente.");}
+    }
+</script>
 </body>
 </html>
