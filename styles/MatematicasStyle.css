@@ -152,3 +152,8 @@ table{	width:15%;
   margin:auto;
   text-decoration: none;
 }
+
+.video-container iframe {
+  width: 80%;
+  height: auto;
+}
