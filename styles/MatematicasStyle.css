@@ -153,7 +153,8 @@ table{	width:15%;
   text-decoration: none;
 }
 
-.video-container iframe {
+.video {
   width: 80%;
   height: auto;
+  margin: auto;
 }

@@ -19,6 +19,7 @@
         </nav>
     </header>
     <div class="elemento">NÚMEROS PARES E IMPARES</div><br>
+    <video class="video" id="videoPlayer" src="../../../videos/Números pares y números impares - Matemáticas para niños(360P).mp4" controls type = "video/mp4"></video>
     <div class="pregunta">
         <br><p id="pregunta1"></p>
         <button onclick="verificarRespuesta(1, true)" class="boton-ancho">Par</button>
@@ -45,6 +46,18 @@
     </div>
 
     <script>
+        document.addEventListener("DOMContentLoaded", function() {
+        const videoPlayer = document.getElementById("videoPlayer");
+        
+        // Cargar el video
+        videoPlayer.load();
+        
+        // Saltar al segundo 60 cuando se inicie la reproducción
+        videoPlayer.addEventListener("play", function() {
+            videoPlayer.currentTime = 60; // 60 segundos
+        });
+    });
+
         var val1, val2, val3, val4;
         do {
             val1 = Math.floor(Math.random() * 10) + 1;
