@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nivelin - Lenguaje - Uso de la M en B y P</title>
+    <link rel="stylesheet" href="../../../styles/LenguajeStyle.css">
+</head>
+<body class="container">
+    <header>
+        <nav>
+            <h1 class="logo">Nivelin</h1>
+            <a href="../../../index.html"><p class="inicio">Cerrar Sesión</p></a>
+        </nav>
+    </header>
+    <div class="elemento">USO DE LA M EN B Y P</div><br>
+    <br>
+    <div class="pregunta">
+        <p id="pregunta1">Completa la siguiente palabra: co__inar</p>
+        <input type="text" id="respuesta1" class="campo-texto">
+        <button onclick="verificarRespuesta(1)" class="boton-ancho">Verificar</button>
+        <br><span id="resultado1"></span>
+    </div>
+    <br>
+    <div class="pregunta">
+        <p id="pregunta2">Completa la siguiente palabra: ta__or</p>
+        <input type="text" id="respuesta2" class="campo-texto">
+        <button onclick="verificarRespuesta(2)" class="boton-ancho">Verificar</button>
+        <br><span id="resultado2"></span>
+    </div>
+    <div class="pregunta">
+        <p id="pregunta3">Completa la siguiente palabra: co__putadora</p>
+        <input type="text" id="respuesta3" class="campo-texto">
+        <button onclick="verificarRespuesta(3)" class="boton-ancho">Verificar</button>
+        <br><span id="resultado3"></span>
+    </div>
+    <br>
+    <div class="pregunta">
+        <p id="pregunta4">Completa la siguiente palabra: ca__po</p>
+        <input type="text" id="respuesta4" class="campo-texto">
+        <button onclick="verificarRespuesta(4)" class="boton-ancho">Verificar</button>
+        <br><span id="resultado4"></span>
+    </div>
+    <br>
+    <div class="pregunta">
+        <p id="pregunta5">Completa la siguiente palabra: e__volver</p>
+        <input type="text" id="respuesta5" class="campo-texto">
+        <button onclick="verificarRespuesta(5)" class="boton-ancho">Verificar</button>
+        <br><span id="resultado5"></span>
+    </div>
+    <br>
+    <div class="pregunta">
+        <p id="pregunta6">Completa la siguiente palabra: e__iar</p>
+        <input type="text" id="respuesta6" class="campo-texto">
+        <button onclick="verificarRespuesta(6)" class="boton-ancho">Verificar</button>
+        <br><span id="resultado6"></span>
+    </div>
+    
+    <script>
+        function verificarRespuesta(pregunta) {
+            var respuesta = document.getElementById('respuesta' + pregunta).value.toLowerCase().trim();
+            var esCorrecto = false;
+            
+            switch (pregunta) {
+                case 1:
+                    esCorrecto = respuesta === "combinar";
+                    break;
+                case 2:
+                    esCorrecto = respuesta === "tambor";
+                    break;
+                case 3:
+                    esCorrecto = respuesta === "computadora";
+                    break;
+                case 4:
+                    esCorrecto = respuesta === "campo";
+                    break;
+                case 5:
+                    esCorrecto = respuesta === "envolver";
+                    break;
+                case 6:
+                    esCorrecto = respuesta === "enviar";
+                    break;
+            }
+            
+            var resultadoSpan = document.getElementById('resultado' + pregunta);
+            resultadoSpan.innerHTML = esCorrecto ? '<span class="correcto">¡Correcto!</span>' : '<span class="incorrecto">Incorrecto</span>';
+        }
+   
+    </script>
+    
+    <a href="cursoLenguaje.html" class="regresar"><h2>Regresar</h2></a>
+</body>
+</html>

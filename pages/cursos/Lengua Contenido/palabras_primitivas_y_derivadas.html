@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nivelin - Lenguaje - Palabras Primitivas y Derivadas</title>
+    <link rel="stylesheet" href="../../../styles/LenguajeStyle.css">
+</head>
+<body class="container">
+    <header>
+        <nav>
+            <h1 class="logo">Nivelin</h1>
+            <a href="../../../index.html"><p class="inicio">Cerrar Sesión</p></a>
+        </nav>
+    </header>
+    <div class="elemento">PALABRAS PRIMITIVAS Y DERIVADAS</div><br>
+    <br>
+    <div class="pregunta">
+        <p id="pregunta1"></p>
+        <input type="text" id="respuesta1" class="campo-texto">
+        <button onclick="verificarRespuesta(1)" class="boton-ancho">Verificar</button>
+        <br><span id="resultado1"></span>
+    </div>
+    <br>
+    <div class="pregunta">
+        <p id="pregunta2"></p>
+        <input type="text" id="respuesta2" class="campo-texto">
+        <button onclick="verificarRespuesta(2)" class="boton-ancho">Verificar</button>
+        <br><span id="resultado2"></span>
+    </div>
+    <div class="pregunta">
+        <p id="pregunta3"></p>
+        <input type="text" id="respuesta3" class="campo-texto">
+        <button onclick="verificarRespuesta(3)" class="boton-ancho">Verificar</button>
+        <br><span id="resultado3"></span>
+    </div>
+    <br>
+    <div class="pregunta">
+        <p id="pregunta4"></p>
+        <input type="text" id="respuesta4" class="campo-texto">
+        <button onclick="verificarRespuesta(4)" class="boton-ancho">Verificar</button>
+        <br><span id="resultado4"></span>
+    </div>
+    <br>
+    <div class="pregunta">
+        <p id="pregunta5"></p>
+        <input type="text" id="respuesta5" class="campo-texto">
+        <button onclick="verificarRespuesta(5)" class="boton-ancho">Verificar</button>
+        <br><span id="resultado5"></span>
+    </div>
+    <br>
+    <div class="pregunta">
+        <p id="pregunta6"></p>
+        <input type="text" id="respuesta6" class="campo-texto">
+        <button onclick="verificarRespuesta(6)" class="boton-ancho">Verificar</button>
+        <br><span id="resultado6"></span>
+    </div>
+    
+    <script>
+        function generarPregunta(num_pregunta) {
+            switch (num_pregunta) {
+                case 1:
+                    document.getElementById("pregunta1").textContent = "1) Escribe otra palabra derivada de 'Jugar'.";
+                    document.getElementById("resultado1").textContent = "";
+                    break;
+                case 2:
+                    document.getElementById("pregunta2").textContent = "2) Escribe otra palabra derivada de 'Correr'.";
+                    document.getElementById("resultado2").textContent = "";
+                    break;
+                case 3:
+                    document.getElementById("pregunta3").textContent = "3) Escribe otra palabra derivada de 'Cantar'.";
+                    document.getElementById("resultado3").textContent = "";
+                    break;
+                case 4:
+                    document.getElementById("pregunta4").textContent = "4) Escribe la palabra primitiva de 'Pintor'.";
+                    document.getElementById("resultado4").textContent = "";
+                    break;
+                case 5:
+                    document.getElementById("pregunta5").textContent = "5) Escribe la palabra primitiva de 'Dulzura'.";
+                    document.getElementById("resultado5").textContent = "";
+                    break;
+                case 6:
+                    document.getElementById("pregunta6").textContent = "6) Escribe la palabra primitiva de 'Bailarina'.";
+                    document.getElementById("resultado6").textContent = "";
+                    break;
+            }
+        }
+        
+        function verificarRespuesta(pregunta) {
+            var respuesta = document.getElementById('respuesta' + pregunta).value.toLowerCase().trim();
+            var esCorrecto = false;
+            
+            switch (pregunta) {
+                case 1:
+                    esCorrecto = respuesta === "jugador" || "juguete" || "juguetón";
+                    break;
+                case 2:
+                    esCorrecto = respuesta === "corredor" || "corredora" || "corrible";
+                    break;
+                case 3:
+                    esCorrecto = respuesta === "cantante" || "canto" || "canción";
+                    break;
+                case 4:
+                    esCorrecto = respuesta === "pintar";
+                    break;
+                case 5:
+                    esCorrecto = respuesta === "dulce";
+                    break;
+                case 6:
+                    esCorrecto = respuesta === "bailar";
+                    break;
+            }
+            
+            var resultadoSpan = document.getElementById('resultado' + pregunta);
+            resultadoSpan.innerHTML = esCorrecto ? '<span class="correcto">¡Correcto!</span>' : '<span class="incorrecto">Incorrecto</span>';
+        }
+   
+        generarPregunta(1);
+        generarPregunta(2);
+        generarPregunta(3);
+        generarPregunta(4);
+        generarPregunta(5);
+        generarPregunta(6);
+    </script>
+    
+    <a href="cursoLenguaje.html" class="regresar"><h2>Regresar</h2></a>
+</body>
+</html>
